@@ -10,12 +10,14 @@ CME519 Veri Madenciliği dönem projesi (Faz 1 – vize), İstanbul Topkapı Ün
 2. `01_veri_hazirlama_EDA.ipynb` – değişken seçimi, temizleme, eğitim/test ayrımı, keşifsel veri analizi, aykırı değer analizi
 3. `02_modelleme.ipynb` – öznitelik mühendisliği, ön işleme hattı, öznitelik seçimi karşılaştırması, lojistik regresyon ve kNN, GridSearchCV, karar eşiği, test değerlendirmesi
 
-## Ana sonuçlar (test kümesi, n = 69.935)
-| Model | F1 | ROC-AUC |
-|---|---|---|
-| Çoğunluk sınıfı (baz çizgi) | 0,000 | 0,500 |
-| Lojistik regresyon (RFE-20, C = 0,01, eşik 0,625) | 0,455 | 0,794 |
-| kNN (RFE-20, k = 301, eşik 0,193) | 0,458 | 0,793 |
+## Ana sonuçlar (test kümesi, n = 69.935, pozitif oran %14,4)
+| Model | F1 | ROC-AUC | PR-AUC |
+|---|---|---|---|
+| Çoğunluk sınıfı (baz çizgi) | 0,000 | 0,500 | 0,144 |
+| Lojistik regresyon (RFE-20, C = 0,01, eşik 0,625) | 0,455 | 0,794 | 0,431 |
+| kNN (RFE-20, k = 301, eşik 0,193) | 0,459 | 0,793 | 0,434 |
+
+En önemli öznitelikler (permütasyon önemi, lojistik regresyon): fiziksel sağlığı kötü gün sayısı, genel sağlık, yaş, ideal uykudan sapma, maliyet nedeniyle doktora gidememe.
 
 ## Ortam
 Google Colab, Python 3, pandas, scikit-learn, matplotlib, seaborn. Tüm rastgele işlemlerde `random_state = 42`.
